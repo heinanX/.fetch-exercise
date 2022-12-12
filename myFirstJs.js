@@ -5,8 +5,7 @@ function timeOutfunction(myFunction) {
 }
 
 function myFunction () {
-
-console.log("3")
+  console.log("3")
 }
 
 timeOutfunction(myFunction)
