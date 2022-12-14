@@ -1,5 +1,5 @@
 
-
+// UPPGIFT 1!!!
 
 
 // function timeOutfunction(myFunction) {
@@ -14,6 +14,7 @@
 
 // timeOutfunction(myFunction)
 
+// UPPGIFT 2!!!
 
 fetch("http://sholiday.faboul.se/dagar/v2.1/2006")
   .then((response) => response.json())
@@ -34,3 +35,13 @@ function writeOutInfo (data) {
     }
   });
 }
+
+// UPPGIFT 3!!!
+
+// Använd Fetch för att hämta information från Svenska helgdagar API’er.
+
+// I den här övningen ska du lista alla datum som midsommarafton har varit på de senaste 5 åren - använd Fetch med async/await!
+
+ 
+
+// Svenska helgdagar API:    https://api.dryg.net
