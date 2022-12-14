@@ -5,20 +5,21 @@ Promise.all([
     fetch("http://sholiday.faboul.se/dagar/v2.1/2021"),
     fetch("http://sholiday.faboul.se/dagar/v2.1/2022")
 ]) .then((responses) => Promise.all(responses.map((response) => response.json())))
-.then((data) => console.log(data));
+.then((data) => writeOutInfo(data));
 
 
 async function writeOutInfo(data) {
-    let days = data.dagar;
-  
-    days.forEach(object => {
-      let holiday = object.helgdag
-      
-      if (holiday) {
+  data.forEach(object => {
+    object.dagar.forEach(days => {
+      let holidays = days.helgdag
+      if (holidays === "Midsommarafton") {
         let p = document.createElement("p")
-        p.innerHTML = object.datum + ": " + holiday
+        p.innerHTML = days.datum + ": " + holidays
         document.querySelector("body").appendChild(p)
         console.log(object)
       }
-    });
+    })
+    
+    
+  });
 }
