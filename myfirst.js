@@ -29,7 +29,7 @@ function writeOutInfo (data) {
     
     if (holiday) {
       let p = document.createElement("p")
-      p.innerHTML =object.datum + ": " + holiday
+      p.innerHTML = object.datum + ": " + holiday
       document.querySelector("body").appendChild(p)
       console.log(object)
     }
