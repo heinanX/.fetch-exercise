@@ -9,7 +9,7 @@ Promise.all([
 
 
 async function writeOutInfo(data) {
-  data.forEach(object => {
+  await data.forEach(object => {
     object.dagar.forEach(days => {
       let holidays = days.helgdag
       if (holidays === "Midsommarafton") {
