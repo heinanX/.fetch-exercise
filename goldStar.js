@@ -1,33 +1,53 @@
 console.time("apiCall") 
-function getDates() {
+function getDates(year, times) {
 
-    fetch ("http://sholiday.faboul.se/dagar/v2.1/2022")
-    .then((response) => response.text())
+   let dif = year - times
+   let array = []
+   if (dif < 2022) {
+    for (dif; dif<=year;  dif++) {
+        array.push(dif)
+   }
+}
+   
+   
+
+
+
+    console.log(array)
+
+
+
+    fetch ("http://sholiday.faboul.se/dagar/v2.1/"+ year)
+    .then((response) => response.json())
     .then((data) => myFunction(data))
-    fetch ("http://sholiday.faboul.se/dagar/v2.1/2021")
-    .then((response) => response.text())
-    .then((data) => myFunction(data))
-    fetch ("http://sholiday.faboul.se/dagar/v2.1/2020")
-    .then((response) => response.text())
-    .then((data) => myFunction(data))
-    fetch ("http://sholiday.faboul.se/dagar/v2.1/2019")
-    .then((response) => response.text())
-    .then((data) => myFunction(data))
+    // fetch ("http://sholiday.faboul.se/dagar/v2.1/2021")
+    // .then((response) => response.json())
+    // .then((data) => myFunction(data))
+    // fetch ("http://sholiday.faboul.se/dagar/v2.1/2020")
+    // .then((response) => response.json())
+    // .then((data) => myFunction(data))
+    // fetch ("http://sholiday.faboul.se/dagar/v2.1/2019")
+    // .then((response) => response.json())
+    // .then((data) => myFunction(data))
 
 
 };
 
-getDates();
+function getYears () {
+    // 
+}
+
+getDates(2022,30);
 
 function myFunction(data) {
     const body = document.querySelector("body")
     for (const year of [data]) {
-        let text
-        text += year + "<br><br><br><br>"
-        let p = document.createElement("p")
-        p.innerText = text
-        body.append(p)
-        console.log(text)
+        for (const years of [year]) {
+            let p = document.createElement("p")
+            p.innerHTML = years.startdatum
+            body.append(p)
+            console.log(years.startdatum)
+        }
     };
     
 
