@@ -15,7 +15,7 @@ async function writeOutInfo(data) {
       if (holidays === "Midsommarafton") {
         let p = document.createElement("p")
         p.innerHTML = days.datum + ": " + holidays
-        document.querySelector("body").appendChild(p)
+        document.body.appendChild(p)
         console.log(object)
       }
     })
