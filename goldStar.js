@@ -13,14 +13,11 @@ function getDates(year, times) {
 }
    
 function myFetch(object) {
-    fetch ("http://sholiday.faboul.se/dagar/v2.1/"+ object)
-    .then((response) => response.json())
+    Promise.all (fetch ("http://sholiday.faboul.se/dagar/v2.1/"+ object))
+    .then((responses) => Promise.all(responses.map((response) => response.json())))
     .then((data) => myFunction(data))
 }
 };
-
-
-getDates(2022,30);
 
 function myFunction(data) {
     const body = document.querySelector("body")
@@ -35,5 +32,5 @@ function myFunction(data) {
     };
 
 }
-
+getDates(2022,30);
 console.timeEnd("apiCall")
