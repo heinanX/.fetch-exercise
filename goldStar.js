@@ -30,7 +30,6 @@ function myFunction(data) {
                 let p = document.createElement("p")
                 p.innerHTML = days.datum
                 body.append(p)
-                console.log(days.datum)
             }
         }
     };
